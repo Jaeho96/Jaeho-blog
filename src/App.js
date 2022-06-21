@@ -1,16 +1,14 @@
-import React from 'react';
-import { googleSignIn } from "firebase_config/firebase";
+import { useRoutes } from 'react-router-dom';
+import routes from 'config/routes';
 
 const App = () => {
-    async function handleSignup() {
-        await googleSignIn()
-    }
+    const routing = useRoutes(routes);
 
     return (
-        <div>
-            <button onClick={handleSignup}>Google</button>
-        </div>
-    );
+        <>
+            {routing}
+        </>
+    )
 }
 
 export default App;
